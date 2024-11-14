@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Document Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Required libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <h1 class="text-3xl font-bold text-center mb-8">AI Document Chatbot</h1>
+
+      <!-- Connection Status -->
+      <div
+        id="connectionStatus"
+        class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-md mb-6 hidden"
+      >
+        Connecting...
+      </div>
+
+      <!-- File Upload Section -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <h2 class="text-xl font-semibold mb-4">Upload Document</h2>
+        <form id="uploadForm" class="space-y-4">
+          <div class="flex items-center space-x-4">
+            <input
+              type="file"
+              id="fileInput"
+              accept=".pdf,.json"
+              class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+            />
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+            >
+              Upload
+            </button>
+          </div>
+          <div id="uploadStatus" class="text-sm text-gray-600"></div>
+        </form>
+      </div>
+
+      <!-- Chat Interface -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Chat</h2>
+        <div
+          id="chatMessages"
+          class="space-y-4 mb-4 h-96 overflow-y-auto"
+        ></div>
+
+        <form id="chatForm" class="flex space-x-4">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Ask a question about the document..."
+            class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/config.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/websocket.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/upload.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

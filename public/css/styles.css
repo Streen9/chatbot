@@ -1,0 +1,211 @@
+/* Container styles */
+.container {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+/* Upload section */
+.upload-section {
+  @apply bg-white rounded-lg shadow-md p-6 mb-6;
+}
+
+.file-input-wrapper {
+  @apply flex items-center space-x-4;
+}
+
+.file-input {
+  @apply block text-sm text-gray-500
+    file:mr-4 file:py-2 file:px-4
+    file:rounded-md file:border-0
+    file:text-sm file:font-semibold
+    file:bg-blue-50 file:text-blue-700
+    hover:file:bg-blue-100;
+}
+
+.upload-button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md 
+    hover:bg-blue-600 transition-colors
+    disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Chat section */
+.chat-section {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.chat-messages {
+  @apply space-y-4 mb-4 h-96 overflow-y-auto;
+}
+
+.message {
+  @apply p-4 rounded-lg;
+}
+
+.message.system {
+  @apply bg-gray-100;
+}
+
+.message.user {
+  @apply bg-blue-100 ml-12;
+}
+
+.message.ai {
+  @apply bg-gray-100 mr-12;
+}
+
+.message.error {
+  @apply bg-red-100 text-red-700;
+}
+
+.message-header {
+  @apply font-semibold mb-1;
+}
+
+.message-content {
+  @apply prose prose-sm max-w-none;
+}
+
+/* Input section */
+.chat-input-wrapper {
+  @apply flex space-x-4 mt-4;
+}
+
+.chat-input {
+  @apply flex-1 px-4 py-2 border rounded-md
+    focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.send-button {
+  @apply bg-blue-500 text-white px-6 py-2 rounded-md
+    hover:bg-blue-600 transition-colors
+    disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Status messages */
+.status-message {
+  @apply mt-2 text-sm;
+}
+
+.status-message.success {
+  @apply text-green-600;
+}
+
+.status-message.error {
+  @apply text-red-600;
+}
+
+.status-message.info {
+  @apply text-blue-600;
+}
+
+/* Loading indicators */
+.loading-indicator {
+  @apply flex space-x-1 items-center;
+}
+
+.loading-dot {
+  @apply w-2 h-2 bg-blue-500 rounded-full animate-pulse;
+}
+
+/* Reference links */
+.reference-links {
+  @apply border-t border-gray-200 mt-4 pt-3;
+}
+
+.reference-link {
+  @apply inline-flex items-center px-2 py-1 bg-gray-100 
+           hover:bg-gray-200 rounded text-sm transition-colors
+           text-gray-700 hover:text-gray-900;
+}
+
+/* Reference popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reference-popup {
+  animation: fadeIn 0.2s ease-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.reference-popup pre {
+  @apply bg-gray-50 p-3 rounded-md overflow-x-auto;
+}
+
+.reference-popup code {
+  @apply text-sm font-mono;
+}
+
+/* Highlighted text in popup */
+.highlight {
+  @apply bg-yellow-100 px-1 rounded;
+}
+
+
+/* Typing indicator */
+.typing-dot {
+    @apply w-2 h-2 bg-blue-500 rounded-full;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Message timestamps */
+.message-timestamp {
+    @apply text-xs text-gray-500 ml-2;
+}
+
+/* Error message dismiss button */
+.dismiss-button {
+    @apply text-red-500 hover:text-red-700 text-sm 
+           transition-colors duration-200;
+}
+
+/* Reference section transitions */
+.references-section {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.references-section.hidden {
+    @apply opacity-0 transform -translate-y-2;
+}
+
+/* Message hover effects */
+.message-content:hover .copy-button {
+    @apply opacity-100;
+}
+
+/* Smooth scrolling for chat container */
+.chat-messages {
+    scroll-behavior: smooth;
+    @apply scrollbar-thin scrollbar-thumb-gray-300 
+           scrollbar-track-transparent;
+}
+
+/* Better focus states */
+.message-input:focus {
+    @apply ring-2 ring-blue-500 ring-opacity-50 
+           border-blue-500 outline-none;
+}
+
+/* System message styling */
+.system-message {
+    @apply border-l-4 border-green-500 bg-green-50;
+}
